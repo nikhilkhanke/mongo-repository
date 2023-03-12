@@ -61,7 +61,7 @@ public class GenericFilterCriteriaBuilder {
         List<Criteria> criteriaOrClause = new ArrayList<>();
         Criteria criteria = new Criteria();
         // build criteria
-        mongoFilterOrConditions.stream().map(condition -> criteriaAndClause.add(buildCriteria(condition))).collect(Collectors.toList());
+        mongoFilterAndConditions.stream().map(condition -> criteriaAndClause.add(buildCriteria(condition))).collect(Collectors.toList());
         mongoFilterOrConditions.stream().map(condition -> criteriaOrClause.add(buildCriteria(condition))).collect(Collectors.toList());
 
         if (!criteriaAndClause.isEmpty() && !criteriaOrClause.isEmpty()) {
